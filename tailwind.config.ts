@@ -26,6 +26,27 @@ module.exports = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
+        backgroundColor: {
+          'custom-blue': '#2094F0'
+        },
+        textColor: {
+          'custom-blue': '#2094F0'
+        },
+        fontFamily: {
+          'sf-pro': [
+            'SF Pro Text',
+            '-apple-system',
+            'BlinkMacSystemFont',
+            'Roboto',
+            'Segoe UI',
+            'Helvetica',
+            'Arial',
+            'sans-serif',
+            'Apple Color Emoji',
+            'Segoe UI Emoji',
+            'Segoe UI Symbol',
+          ],
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",

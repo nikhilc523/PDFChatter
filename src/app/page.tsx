@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import homephoto from "../../public/AIbg.png";
 import { UserButton, auth } from "@clerk/nextjs";
 import Link from "next/link";
 import { ArrowRight, LogIn } from "lucide-react";
@@ -8,6 +9,10 @@ import SubscriptionButton from "@/components/SubscriptionButton";
 import { db } from "@/lib/db";
 import { chats } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
+import Image from "next/image";
+import '../../styles/global.css';
+import Head from 'next/head';
+
 
 export default async function Home() {
   const { userId } = await auth();
@@ -21,11 +26,17 @@ export default async function Home() {
     }
   }
   return (
-    <div className="w-screen min-h-screen bg-gradient-to-r from-rose-100 to-teal-100">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div className="flex flex-col items-center text-center">
-          <div className="flex items-center">
-            <h1 className="mr-3 text-5xl font-semibold">Chat with any PDF</h1>
+    <div className="w-screen min-h-screen bg-black flex">
+      <div className="w-1/4 -translate-x-20"> {/* Adjust w-1/4 as required */}
+            <Image src={homephoto} alt="Description of Image" layout="fill" objectFit="cover" />
+    </div>
+      <div className="w-3/4 -translate-x-100">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="flex flex-col items-center text-center">
+            <div className="flex items-center">
+            <h1 className="line-1 animation-typewriter animation-blinkTextCursor mr-3 text-5xl font-semibold text-white">Chat with any PDF</h1>
+
+
             <UserButton afterSignOutUrl="/" />
           </div>
 
@@ -63,6 +74,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

@@ -33,7 +33,7 @@ const ChatSideBar = ({ chats, chatId, isPro }: Props) => {
   return (
     <div className="w-full h-screen  p-4 text-gray-200 bg-gray-900">
       <Link href="/">
-        <Button className="w-full border-dashed border-white border">
+        <Button className="w-full border-dashed border-white border bg-primary hover:bg-blue-600/90 ">
           <PlusCircle className="mr-2 w-4 h-4" />
           New Chat
         </Button>
